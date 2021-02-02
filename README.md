@@ -1,8 +1,17 @@
-# Currency Convertion Tool
+# Currency Convertion APP
 
 Application to convert colombian pesos to united states dollars.
 
-## How to execute?
+## Run locally with Docker
+
+```shell
+cd currency-convertion-tool
+docker-compose up
+```
+
+This will be turned on on localhost:3000 by default
+
+## Run locally without Docker
 
 1. First you need to enable a mongodb server instance on the localhost or setup the path to it on server/config.js file.
 

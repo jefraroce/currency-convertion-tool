@@ -3,10 +3,12 @@
 # dependencies
 .vscode/
 gui/node_modules
+server/node_modules
 /gui/.pnp
 /gui/.pnp.js
 
-server/node_modules
+# MongoDB Data
+/data
 
 # testing
 /gui/coverage

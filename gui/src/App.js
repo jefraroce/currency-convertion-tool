@@ -5,7 +5,7 @@ import Chat from './components/Chat'
 import MuiTheme from './layouts/MuiTheme'
 import ConvertionList from './components/ConvertionList'
 
-const socket = io('localhost:3001')
+const socket = io(process.env.SERVER || 'localhost:3001')
 
 const App = () => {
   const [convertions, setConvertions] = useState([])

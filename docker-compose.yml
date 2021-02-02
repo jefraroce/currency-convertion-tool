@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  app:
+    build: ./gui/.
+    environment:
+      SERVER: "server:3001"
+    depends_on:
+      - server
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./gui:/usr/src
+      - /usr/src/node_modules
+    command: npm run start
+
+  db:
+    image: mongo
+    volumes:
+      - ./data:/data/db
+
+  server:
+    build: ./server/.
+    environment:
+      MONGODB: "mongodb://db:27017/currency-convertions"
+    depends_on:
+      - db
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./server:/usr/src
+      - /usr/src/node_modules
+    command: npx nodemon --legacy-watch index.js
